@@ -10,15 +10,14 @@
 <br>
 
 **[ 效果图预览 ]**
-![](./image-say/index.png)
-
+#### 主页
 ![](./image-say/index1.png)
-
+#### 登录、注册、购物车
 ![](./image-say/lrs.png)
-
-![](./image-say/price.png)
-
+#### 列表
 ![](./image-say/shoplist.png)
-
+#### 发货单
 ![](./image-say/sendgoods.png)
+#### 商品详情
+![](./image-say/goodsinfo.png)
 
