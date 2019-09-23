@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>结算页面</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/shopcart.css">
+  <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="js/gettime.js" charset="UTF-8"></script>
+  <style type="text/css">
+    p{margin: 0;padding: 0;}
+    .infotitle{
+      background: url("image/nbg.gif");
+      line-height: 24px;
+      font-size: 15px;
+      font-weight: bold;
+      padding-left: 160px;
+    }
+    #userinfo a{color: #000;text-decoration: underline;}
+    #userinfo div p{margin-left: 100px;margin-top: 5px;}
+    #userinfo div p em{color: red;margin-right:10px}
+    #userinfo div p span{margin-right: 5px;}
+    #nulls{color: red;width: auto;}
+    .order p span{
+      display: inline-block;
+      width: 70px;
+      text-align: right;
+    }
+    .userfoot p span{
+      margin-left: 13px;
+    }
+    .beizhu span{display: inline-block;text-align: right;line-height: 15px;}
+  </style>
+  <script type="text/javascript">
+    $(function () {
+      totalprice();
+    });
+
+    function totalprice() {
+      $("#shoplist .price").each(function () {
+        var price = $(this).text();
+        var num = $(this).parent().parent().children("td").find(".num").text();
+        var count = price * num;
+        if(isInteger(count)){
+          count = count+".00";
+        }
+        $(this).parent().parent().children("td").find(".smalltotal").text(count)
+      });
+
+      var total = 0.00;
+      var rows = 0;
+      $("#shoplist .smalltotal").each(function () {
+        total = total+parseFloat($(this).text());
+        rows++;
+        $("#count").text(rows);
+        $("#total").text(total+"元");
+      });
+    };
+    function isInteger(obj) {
+      return obj % 1 ===0;
+    }
+    /*验证优惠卡是否有数据*/
+    function loyaltycard() {
+      var cardNo =  document.getElementById("cardNo");
+      var cardPwd =  document.getElementById("cardPwd");
+      var nulls = document.getElementById("nulls");
+      if(cardNo.value == ""){
+        nulls.innerText = "卡号不能为空";
+        return false;
+      }
+      if(cardPwd.value == ""){
+        nulls.innerText = "密码不能为空";
+        return false;
+      }
+      nulls.innerText = "";
+      return true;
+    }
+  </script>
+</head>
+<body>
+<div id="container">
+  <!--头部-->
+  <div id="pagetop" style="position: relative">
+    <div class="indexlogo"><img src="image/logo.gif" alt=""></div>
+    <div class="topinfo">
+      <span>你好，欢迎登录麦子商城！要购物，<a href="login.html">[登录]</a> ,新用户？<a href="register.html">[免费注册]</a></span>
+    </div>
+    <div class="topnav" style="clear:both;position: absolute;top: -10px;left: 570px;">
+      <div class="topnavlist">
+        <ul>
+          <li><a href="">帮助中心</a>|</li>
+          <li><a href="">客户反馈</a>|</li>
+          <li><a href="">网站地图</a>|</li>
+          <li><a href="">加入收藏</a>|</li>
+          <li style="width: 200px;"><span id="Clock"></span></li>
+        </ul>
+      </div>
+      <marquee height="25px" style="text-indent: 100px;" direction="up" scrollamount=3 behavior="scroll">
+        <a href="Active.html">最新公告:明天有促销活动！</a>
+      </marquee>
+    </div>
+    <!--主导航-->
+    <div id="nav" style="clear: both
+;">
+      <div style="background: url(image/top_1.gif); height: 36px;">
+        <ul id="navlist">
+          <li><a href="index.html">网站首页</a>|</li>
+          <li><a href="#">分类导航</a>|</li>
+          <li><a href="#">购物帮助</a>|</li>
+          <li><a href="productList.html">商品列表</a>|</li>
+          <li><a href="offersheet.html">报价单</a>|</li>
+          <li><a href="payclose.html">发货单</a></li>
+        </ul>
+      </div>
+      <div class="sousuo">
+        <span style="color: #FFF;font-size: 14px;">商品搜索</span>
+        <span>
+           <select name="" id="">
+           <option>商品搜索</option>
+           <option>所有分类</option>
+           <option>最新商品</option>
+           <option>热卖商品</option>
+         </select>
+         </span>
+        <span><input type="text" maxlength="50" size="50"/>&ensp;<input type="button" value="搜索"/></span>
+        <span style="color: #FFF;">高级组合搜索</span>
+        <div style="background: url(image/gouwuche.jpg);height: 20px;width: 260px; background-size:260px;float: right;line-height: 20px; margin:2px 15px;">
+          <span style="margin-left: 19px;"><a href="gouwu.html">购物车暂时为空</a></span>
+          <span style="margin:0 15px 0 40px; "><a href="gouwu.html">去结算</a></span>
+          <span><a href="gouwu.html">用户中心</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--中间主体-->
+  <div id="pagebody">
+    <!--左边-->
+    <div id="bleft">
+      <!--用户信息-->
+      <div id="userbox" class="userbox">
+        <h3>用户信息</h3>
+        <ul>
+          <li style="background: url(image/user/1.gif) no-repeat center left"><a href="#">欢迎yokemadman[退出]</a></li>
+          <li style="background: url(image/user/2.gif) no-repeat center left"><a href="#">用户资料修改</a></li>
+          <li style="background: url(image/user/3.gif) no-repeat center left"><a href="#">用户密码修改</a></li>
+          <li style="background: url(image/user/4.gif) no-repeat center left"><a href="#">订单管理</a></li>
+          <li style="background: url(image/user/5.gif) no-repeat center left"><a href="#">管理优惠券(0张)</a></li>
+          <li style="background: url(image/user/6.gif) no-repeat center left"><a href="#">兑换优惠券</a></li>
+          <li style="background: url(image/user/7.gif) no-repeat center left"><a href="#">缺货登记 登记记录</a></li>
+          <li style="background: url(image/user/8.gif) no-repeat center left"><a href="#">购物车(2)</a></li>
+          <li style="background: url(image/user/9.gif) no-repeat center left"><a href="#">我的收藏(0)</a></li>
+          <li style="background: url(image/user/10.gif) no-repeat center left"><a href="#">对比框(0)</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--中间主体-->
+    <div id="bmiddle" style="width: 770px;margin-top: 10px;">
+      <div class="pl_top">
+        <img src="image/productList/home.gif" alt=""><span>你的位置:</span><span><a href="index.html">首页</a></span>>><span><a href="shoppingcart.html">购物车</a></span>
+      </div>
+
+      <div style="border: 1px solid rgb(245,245,255);">
+        <table id="shoplist">
+          <tr class="tittle">
+            <th >商品名称</th>
+            <th>单价(元)</th>
+            <th>数量</th>
+            <th>合计(元)</th>
+            <th>类型</th>
+          </tr>
+          <tr>
+            <td>男士运动鞋</td>
+            <td>￥<span class="price">528.00</span></td>
+            <td><span class="num">1</span></td>
+            <td>￥<span class="smalltotal">00.00</span></td>
+            <td>-</td>
+
+          </tr>
+          <tr>
+            <td>美的(midea)电脑版点压力锅</td>
+            <td>￥<span class="price">389.13</span></td>
+            <td><span class="num">2</span></td>
+            <td>￥<span class="smalltotal">00.00</span></td>
+            <td>-</td>
+
+          </tr>
+        </table>
+        <div class="shopinfo">
+          <div>
+            <span>共</span>
+            <span id="count" class="redfont">2</span>
+            <span>件商品</span>
+            <span>价格总计:</span>
+            <span id="total" class="redfont">￥917.00元</span>
+            <span>您是:</span>
+            <span style="color: #33CCFF;font-weight: bold;">一般会员</span>
+            <span>(不享受折扣)</span>
+          </div>
+          <div>
+            <span>折扣价格:</span>
+            <span class="redfont">￥917.00元</span>
+            <span>获得积分:</span>
+            <span>917</span>
+          </div>
+          <div>
+            <span>满￥500元免运费，您的订单可以免费送货!</span>
+          </div>
+        </div>
+      </div>
+
+      <!--信息填写-->
+      <div id="userinfo">
+        <!--赠品选择-->
+        <div id="send">
+          <div class="infotitle">
+            <img src="image/lb.gif" alt="">&ensp;选择赠品
+          </div>
+          <input type="radio" checked>请选择赠品:每个订单只可以选择一个赠品，赠品有限请抓紧机会，赠品不负责退换！<br>
+          <input type="radio">只差2083即可获得次赠品
+        </div>
+        <!--使用优惠券-->
+        <div>
+          <div class="infotitle">
+            <img src="image/lb.gif" alt="">&ensp;使用优惠券
+          </div>
+          <div class="infotext order">
+            <p>
+              <span>卡号:</span><input type="text" id="cardNo">
+              <span>密码:</span><input type="text" id="cardPwd">
+              <a href="javascript:;" onclick="loyaltycard()">验证</a>
+              <span id="nulls"></span>
+            </p>
+          </div>
+        </div>
+        <!--详细信息-->
+        <div>
+          <div class="infotitle">
+            <img src="image/lb.gif" alt="">&ensp;请填写订货人的详细信息
+          </div>
+          <div class="infotext order">
+            <p>
+              <span>姓名:</span><input type="text" name="username">
+            </p>
+            <p>
+              <span>电话:</span><input type="tel" name="telphone">
+            </p>
+            <p>
+              <span>E-mail:</span><input type="email" name="email">
+            </p>
+            <p>
+              <span>地址:</span><input type="text" name="address">
+            </p>
+            <p>
+              <span>邮编:</span><input type="text" name="postcode">
+            </p>
+          </div>
+
+        </div>
+        <!--复制订货信息-->
+        <div>
+          <div class="infotitle">
+            <img src="image/lb.gif" alt="">&ensp;请填写收货人的详细信息
+            <input type="checkbox"><span style="color: #2a36ff;">复制订货人信息</span>
+          </div>
+          <div class="infotext copyorder">
+            <p>
+              <em>*</em><span>客户姓名:</span><input type="text" name="username">
+            </p>
+            <p>
+              <em>*</em><span>联系电话:</span><input type="tel" name="telphone">
+            </p>
+            <p>
+              <em>*</em><span>电子邮箱:</span><input type="email" name="email">
+            </p>
+            <p>
+              <em>*</em><span>联系地址:</span><input type="text" name="address">
+            </p>
+            <p>
+              <em>*</em><span>邮政编码:</span><input type="text" name="postcode">
+            </p>
+            <p>
+              <em>*</em><span>到货时间:</span><input type="radio" checked>工作时间8:00-23:00
+            </p>
+            <p>
+              <em>*</em><span>付款方式:</span><input type="radio" checked>银行转账 <a href="">[中国工商银行]</a>
+              <br>
+              <a href="" style="color: red;margin-left: 100px;">关于付款方式的详细说明》</a>
+            </p>
+            <p>
+              <em>*</em><span>送货方式:</span>
+              <input type="radio" name="sendway" checked="checked">快递送货<a href="">[实惠快速,一般3天到货,收费12元]</a> <br>
+              <input type="radio" name="sendway" style="margin-left: 78px;">EMS邮寄 <a href="">[农村邮寄,一般5天到货,收费23元]</a>
+              <br>
+              <a href="" style="color: red;margin-left: 100px;">关于送货方式的详细说明》</a>
+            </p>
+            <div class="userfoot">
+            <p>
+              <span>需要发票:</span><input type="radio" name="fapiao" >需要<input type="radio" name="fapiao" checked="checked">不需要<a href="">(开发票需要加收税点5%)</a>
+            </p>
+            <p>
+              <span>缺货处理:</span><input type="radio" name="deal" checked="checked">等待<input type="radio" name="deal">从订单取消
+            </p>
+            <p class="beizhu">
+              <span>备&emsp;注:<br>(50汉字内)</span>
+              <textarea name=""  cols="30" rows="3"></textarea>
+            </p>
+            <p style="padding-left: 80px;">
+              <input type="submit" value="提交" style="width: 60px;margin-bottom: 10px;">
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+
+  </div>
+  <!--底部-->
+  <div id="pagefooter">
+    <!--底部导航-->
+    <div id="footnav">
+      <ul>
+        <li class="listnav">
+          <h4>关于我们</h4>
+          <ul>
+            <li><a href="#">发展历程</a></li>
+            <li><a href="#">联系方式</a></li>
+            <li><a href="#">公司介绍</a></li>
+            <li><a href="#">企业文化</a></li>
+          </ul>
+        </li>
+        <li class="listnav">
+          <h4>付款方式</h4>
+          <ul>
+            <li><a href="#">银行汇款</a></li>
+            <li><a href="#">在线支付</a></li>
+            <li><a href="#">银行汇款</a></li>
+            <li><a href="#">公司转账</a></li>
+          </ul>
+        </li>
+        <li class="listnav">
+          <h4>送货方式</h4>
+          <ul>
+            <li><a href="#">上门自提</a></li>
+            <li><a href="#">EMS快递</a></li>
+            <li><a href="#">快递发货</a></li>
+            <li><a href="#">平邮发货</a></li>
+          </ul>
+        </li>
+        <li class="listnav">
+          <h4>售后服务</h4>
+          <ul>
+            <li><a href="#">质保承诺</a></li>
+            <li><a href="#">退换货政策</a></li>
+            <li><a href="#">价格保护</a></li>
+            <li><a href="#">返修申请</a></li>
+          </ul>
+        </li>
+        <li class="listnav">
+          <h4>购物帮助</h4>
+          <ul>
+            <li><a href="#">用户等级</a></li>
+            <li><a href="#">积分获得与使用</a></li>
+            <li><a href="#">购物流程</a></li>
+            <li><a href="#">常见流程</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+  <div id="footinfo">
+    <div><span>淘宝店</span><span>易趣店</span><span>京东店</span><span>天猫店</span></div>
+    <div><span>CopyRight2019.6版权所有:yokemadman.shopcar</span></div>
+    <div><span>客服热线:028-666454545,售后服务:028-666445470</span></div>
+    <div><span>客服邮箱:1763242294@qq.com,技术支持:1763242294@qq.com</span></div>
+  </div>
+</div>
+</body>
+</html>

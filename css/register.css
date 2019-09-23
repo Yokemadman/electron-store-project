@@ -1,0 +1,26 @@
+#regis_login{
+  margin-left: 20px;
+  font-size: 10px;
+}
+#regis_login a{text-decoration: underline;}
+#Form{
+  margin-left: 50px;
+}
+#Form p{height: 20px;padding: 0px;margin: 0px;}
+#Form p em{float: left;color: #f00;line-height: 25px;margin-left: 50px;}
+#Form p label{
+  width: 150px;
+  display: inline-block;
+  float: left;
+  margin-left: 10px;
+  text-align: right;
+  height: 25px;
+  line-height: 25px;
+}
+#Form p label.error{color: #f00;text-align: left;}
+#Form p input{line-height: 22px;margin:0 10px;float: left}
+
+#Form p a{text-decoration: underline;}
+#Form p #sub{
+  margin-left: 150px;
+}

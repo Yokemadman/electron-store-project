@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>登录</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/prolist.css">
+  <link rel="stylesheet" href="css/login.css">
+  <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="js/gettime.js" charset="UTF-8"></script>
+</head>
+<body>
+<div id="container">
+  <!--头部-->
+  <div id="pagetop" style="position: relative">
+    <div class="indexlogo"><img src="image/logo.gif" alt=""></div>
+    <div class="topinfo">
+      <span>你好，欢迎登录麦子商城！要购物，<a href="login.html">[登录]</a> ,新用户？<a href="register.html">[免费注册]</a></span>
+    </div>
+    <div class="topnav" style="clear:both;position: absolute;top: -10px;left: 570px;">
+      <div class="topnavlist">
+        <ul>
+          <li><a href="">帮助中心</a>|</li>
+          <li><a href="">客户反馈</a>|</li>
+          <li><a href="">网站地图</a>|</li>
+          <li><a href="">加入收藏</a>|</li>
+          <li style="width: 200px;"><span id="Clock"></span></li>
+        </ul>
+      </div>
+      <marquee height="25px" style="text-indent: 100px;" direction="up" scrollamount=3 behavior="scroll">
+        <a href="Active.html">最新公告:明天有促销活动！</a>
+      </marquee>
+    </div>
+    <!--主导航-->
+    <div id="nav" style="clear: both
+;">
+      <div style="background: url(image/top_1.gif); height: 36px;">
+        <ul id="navlist">
+          <li><a href="index.html">网站首页</a>|</li>
+          <li><a href="#">分类导航</a>|</li>
+          <li><a href="#">购物帮助</a>|</li>
+          <li><a href="productList.html">商品列表</a>|</li>
+          <li><a href="offersheet.html">报价单</a>|</li>
+          <li><a href="payclose.html">发货单</a></li>
+        </ul>
+      </div>
+      <div class="sousuo">
+        <span style="color: #FFF;font-size: 14px;">商品搜索</span>
+        <span>
+           <select name="" id=" ">
+           <option>商品搜索</option>
+           <option>所有分类</option>
+           <option>最新商品</option>
+           <option>热卖商品</option>
+         </select>
+         </span>
+        <span><input type="text" maxlength="50" size="50"/>&ensp;<input type="button" value="搜索"/></span>
+        <span style="color: #FFF;">高级组合搜索</span>
+        <div style="background: url(image/gouwuche.jpg);height: 20px;width: 260px; background-size:260px;float: right;line-height: 20px; margin:2px 15px;">
+          <span style="margin-left: 19px;"><a href="shoppingcart.html">购物车暂时为空</a></span>
+          <span style="margin:0 15px 0 40px; "><a href="payclose.html">去结算</a></span>
+          <span><a href="login.html">用户中心</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--中间主体-->
+  <div id="pagebody">
+    <!--左边-->
+    <div id="bleft">
+      <!--用户信息-->
+      <div id="userbox" class="userbox">
+        <h3>用户信息</h3>
+        <ul>
+          <li style="background: url(image/user/1.gif) no-repeat center left"><a href="login.html">注册/登录</a></li>
+          <li style="background: url(image/user/8.gif) no-repeat center left"><a href="shoppingcart.html">购物车(0)</a></li>
+          <li style="background: url(image/user/10.gif) no-repeat center left"><a href="#">对比(0)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="bmiddle" style="width: 770px;">
+      <div class="pl_top" style="">
+        <img src="image/productList/home.gif" alt=""><span>你的位置:</span><span><a href="index.html">首页</a></span>>><span><a href="login.html">用户登录</a></span>
+        <span id="login_register">(新用户请 <a href="register.html">点击注册</a>,忘记密码请点击 <a href="">点击这里</a>)</span>
+      </div>
+      <div id="login_form">
+        <form action="" method="post" id="Form">
+          <div></div>
+          <div>
+            <div></div>
+            <div>
+              <p>
+                <span>用&ensp;户&ensp;名:</span>
+                <input type="text" size="10" id="cusername" placeholder="username" name="username">
+              </p>
+              <p>
+                <span>用户密码:</span>
+                <input type="password"  placeholder="password" id="cpwd" name="pwd"size="10">
+              </p>
+            </div>
+            <div style="">
+              <input type="submit" value="" style="">
+            </div>
+          </div>
+          <div></div>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+  <!--底部-->
+  <div id="pagefooter">
+    <!--底部导航-->
+    <div id="footnav">
+      <ul>
+        <li class="listnav">
+          <h4>关于我们</h4>
+          <ul>
+            <li><a href="#">发展历程</a></li>
+            <li><a href="#">联系方式</a></li>
+            <li><a href="#">公司介绍</a></li>
+            <li><a href="#">企业文化</a></li>
+          </ul>
+        </li>
+        <li class="listnav">
+          <h4>付款方式</h4>
+          <ul>
+            <li><a href="#">银行汇款</a></li>
+            <li><a href="#">在线支付</a></li>
+            <li><a href="#">银行汇款</a></li>
+            <li><a href="#">公司转账</a></li>
+          </ul>
+        </li>
+        <li class="listnav">
+          <h4>送货方式</h4>
+          <ul>
+            <li><a href="#">上门自提</a></li>
+            <li><a href="#">EMS快递</a></li>
+            <li><a href="#">快递发货</a></li>
+            <li><a href="#">平邮发货</a></li>
+          </ul>
+        </li>
+        <li class="listnav">
+          <h4>售后服务</h4>
+          <ul>
+            <li><a href="#">质保承诺</a></li>
+            <li><a href="#">退换货政策</a></li>
+            <li><a href="#">价格保护</a></li>
+            <li><a href="#">返修申请</a></li>
+          </ul>
+        </li>
+        <li class="listnav">
+          <h4>购物帮助</h4>
+          <ul>
+            <li><a href="#">用户等级</a></li>
+            <li><a href="#">积分获得与使用</a></li>
+            <li><a href="#">购物流程</a></li>
+            <li><a href="#">常见流程</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+  <div id="footinfo">
+    <div><span>淘宝店</span><span>易趣店</span><span>京东店</span><span>天猫店</span></div>
+    <div><span>CopyRight2019.6版权所有:yokemadman.shopcar</span></div>
+    <div><span>客服热线:028-666454545,售后服务:028-666445470</span></div>
+    <div><span>客服邮箱:1763242294@qq.com,技术支持:1763242294@qq.com</span></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+#login_register{font-size: 10px;}
+#login_register a{
+  text-decoration: underline;
+}
+#login_form{margin: 50px auto;width: 615px;}
+#Form>div:nth-child(1){
+  background: url("../image/logina1.gif");
+  width: 615px;
+  height: 29px;
+}
+#Form>div:nth-child(2){
+  height: 80px;
+  background: rgb(249,249,249);
+}
+#Form>div:nth-child(2) div:nth-child(1){
+  float: left;
+  width: 143px;
+  height: 80px;
+  background: url("../image/logina3.gif")
+}
+#Form>div:nth-child(2) div:nth-child(2){
+  float: left;
+}
+#Form>div:nth-child(2) div:nth-child(2) p{
+  margin-left: 80px;
+}
+#Form>div:nth-child(2) div:nth-child(2) span{
+  padding-right: 10px;
+}
+#Form>div:nth-child(2) div:nth-child(2) input{
+  background: #fbf2a3;
+}
+#Form>div:nth-child(2) div:nth-child(3){
+  float: left;margin-top: 10px;margin-left: 50px;
+}
+#Form>div:nth-child(2) div:nth-child(3) input{
+  background: url("../image/logina4.gif") center;
+  width: 100px;
+  height: 60px;
+  outline: none;
+  border-radius: 10px;
+}
+#Form>div:nth-child(3){
+  background: url("../image/logina2.gif");
+  width: 615px;
+  height: 29px;
+  clear:both;
+}

@@ -1,0 +1,21 @@
+.pl_top{
+  font-size: 13px;
+  background: url("../image/productList/sort1.gif");
+  padding-left: 5px;
+  line-height: 30px;
+  margin-top: 7px;
+}
+.pl_top span{padding: 0 3px;}
+#shoplist{width: 100%;border-collapse: collapse;}
+#shoplist td{text-align: center;}
+.tittle th{
+  height: 24px;
+  background: url("../image/nbg.gif");
+  border-top: 1px solid #fff;
+  font-weight: bold;
+  padding-left: 5px;
+}
+#shoplist th:first-child,#shoplist  td:first-child{text-align: left;width: 45%;}
+.redfont{color: #f00;font-weight: bold}
+.shopinfo{text-align: right;padding-right: 20px;}
+.shopinfo div{margin: 10px 0;}

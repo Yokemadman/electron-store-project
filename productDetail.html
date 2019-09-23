@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>商品详情</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/prolist.css">
+  <link rel="stylesheet" href="css/prodetail.css">
+  <script type="text/javascript" src="js/gettime.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="js/prodebig.js"></script>
+</head>
+<body>
+<div id="container">
+  <!--头部-->
+  <div id="pagetop" style="position: relative">
+    <div class="indexlogo"><img src="image/logo.gif" alt=""></div>
+    <div class="topinfo">
+      <span>你好，欢迎登录麦子商城！要购物，<a href="login.html">[登录]</a> ,新用户？<a href="register.html">[免费注册]</a></span>
+    </div>
+    <div class="topnav" style="clear:both;position: absolute;top: -10px;left: 570px;">
+      <div class="topnavlist">
+        <ul>
+          <li><a href="">帮助中心</a>|</li>
+          <li><a href="">客户反馈</a>|</li>
+          <li><a href="">网站地图</a>|</li>
+          <li><a href="">加入收藏</a>|</li>
+          <li style="width: 200px;"><span id="Clock"></span></li>
+        </ul>
+      </div>
+      <marquee height="25px" style="text-indent: 100px;" direction="up" scrollamount=3 behavior="scroll">
+        <a href="Active.html">最新公告:明天有促销活动！</a>
+      </marquee>
+    </div>
+    <!--主导航-->
+    <div id="nav" style="clear: both
+;">
+      <div style="background: url(image/top_1.gif); height: 36px;">
+        <ul id="navlist">
+          <li><a href="index.html">网站首页</a>|</li>
+          <li><a href="#">分类导航</a>|</li>
+          <li><a href="#">购物帮助</a>|</li>
+          <li><a href="productList.html">商品列表</a>|</li>
+          <li><a href="offersheet.html">报价单</a>|</li>
+          <li><a href="payclose.html">发货单</a></li>
+        </ul>
+      </div>
+      <div class="sousuo">
+        <span style="color: #FFF;font-size: 14px;">商品搜索</span>
+        <span>
+           <select name="" id="">
+           <option>商品搜索</option>
+           <option>所有分类</option>
+           <option>最新商品</option>
+           <option>热卖商品</option>
+         </select>
+         </span>
+        <span><input type="text" maxlength="50" size="50"/>&ensp;<input type="button" value="搜索"/></span>
+        <span style="color: #FFF;">高级组合搜索</span>
+        <div style="background: url(image/gouwuche.jpg);height: 20px;width: 260px; background-size:260px;float: right;line-height: 20px; margin:2px 15px;">
+          <span style="margin-left: 19px;"><a href="gouwu.html">购物车暂时为空</a></span>
+          <span style="margin:0 15px 0 40px; "><a href="gouwu.html">去结算</a></span>
+          <span><a href="gouwu.html">用户中心</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--中间主体-->
+  <div id="pagebody">
+    <!--左边-->
+    <div id="bleft">
+      <!--用户信息-->
+      <div id="userbox" class="userbox">
+        <h3>用户信息</h3>
+        <ul>
+          <li style="background: url(image/user/1.gif) no-repeat center left"><a href="#">注册/登录</a></li>
+          <li style="background: url(image/user/8.gif) no-repeat center left"><a href="#">购物车(0)</a></li>
+          <li style="background: url(image/user/10.gif) no-repeat center left"><a href="#">对比(0)</a></li>
+        </ul>
+      </div>
+      <!--最近浏览产品-->
+      <div id="hezuo" class="hezuo">
+        <h3>最近浏览产品</h3>
+        <div class="fen" style="border: 1px solid red;border-top: none;">
+          <div class="fen_img">
+            <img src="image/logo.gif">
+          </div>
+          <div class="fen_info">无敌电饭煲，价格优惠，品质保证，无敌电饭煲，价格优惠</div>
+          <div style="color: red;text-align: center;font-weight: bold">￥2599.00元</div>
+        </div>
+      </div>
+    </div>
+    <!--中间-->
+    <div id="bmiddle" style="width: 770px;">
+      <div class="pl_top" style="">
+        <img src="image/productList/home.gif" alt="">
+        <span>你的位置:</span>
+        <span><a href="index.html">首页</a></span>>>
+        <span><a href="index.html">家用电器</a></span>>>
+        <span><a href="index.html">生活电器</a></span>>>
+        <span><a href="index.html">霍尼韦尔(Honeywell)5010-CHN空气净化器</a></span>
+      </div>
+      <!--产品详细-->
+      <div style="clear: both;height: 300px;">
+        <div class="proimgbox">
+          <div class="bigimgbox">
+            <img src="image/imgs/p2.jpg"  alt="" id="bigimg" onmousemove="Mmove()" onmouseout="hiddenobj()">
+          </div>
+          <div class="smallimglist">
+            <div><img id="p1" src="image/imgs/p1.jpg" alt="" onmouseover="changeimg();Minidiv()"></div>
+            <div><img id="p2" src="image/imgs/p2.jpg" alt="" onmouseover="changeimg();Minidiv()"></div>
+            <div><img id="p3" src="image/imgs/p3.jpg" alt="" onmouseover="changeimg();Minidiv()"></div>
+            <div><img id="p4" src="image/imgs/p4.jpg" alt="" onmouseover="changeimg();Minidiv()"></div>
+            <div><img id="p5" src="image/imgs/p5.jpg" alt="" onmouseover="changeimg();Minidiv()"></div>
+          </div>
+        </div>
+        <div  class="proinfolist">
+           <div><span class="proin_title">长虹3d数码电视-4100</span><span>(<a href="">0篇用户评论</a>|<a href="#">写评论</a>)</span></div>
+          <div>
+            <span>商品编号:</span><span>100000000001</span>
+          </div>
+          <div>
+            <span>商品积分:</span><span>1298</span><span><a href="">(积分可兑换优惠券)</a></span>
+          </div>
+          <div>
+            <span>市场价格:</span><span>￥1998.00元</span>
+          </div>
+          <div>
+            <span>本站价格:</span><span>￥1298.00元</span>
+          </div>
+          <div>
+            <span>为您节省:</span><span>￥700.00元</span>
+          </div>
+          <div>
+            <span>订购售量:</span><span><input type="text" size="5" value="1"></span>
+          </div>
+          <div>
+              <a href="buy.html"><img src="image/productList/buy.gif" alt=""></a>
+            <a href="#"><img src="image/productList/duibi.gif" alt=""></a>
+            <a href="#"><img src="image/productList/shoucang.gif" alt=""></a>
+          </div>
+          <!--放大镜-->
+          <div id="imgDiv" style="display: none">
+            <img  id="targetimg" width="600" height="600"/>
+          </div>
+        </div>
+
+      </div>
+      <div class="prd_pay">
+       <div>
+         <span>下一个商品:</span>
+         <span><a href="#">霍尼韦尔(Honeywell)</a></span>
+       </div>
+        <div>
+        <span><img src="image/pay/alipay_buy.gif" alt=""></a></span>
+        <span><a href="#"><img src="image/pay/paypal_buy.gif" alt=""></a></span>
+        </div>
+      </div>
+      <!--详情说明-->
+      <div>
+         <div id="prd_title">
+           <div onmouseover="showdivbox(1)"><a href="#">详情说明</a></div>
+           <div onmouseover="showdivbox(2)"><a href="#">相关商品</a></div>
+           <div onmouseover="showdivbox(3)"><a href="#">商品评论</a></div>
+           <div onmouseover="showdivbox(4)"><a href="#">付款方式</a></div>
+           <div onmouseover="showdivbox(5)"><a href="#">送货方式</a></div>
+         </div>
+        <div id="info1" class="pro_infobox">
+          详情说明 详情说明 详情说明 详情说明 详情说明 详情说明 详情说明 详情说明 详情说明 详情说明 详情说明 详情说明 详情说明 详情说明 详情说明 详情说明 详情说明 详情说明
+        </div>
+        <div id="info2" class="pro_infobox" style="display: none;">
+          相关商品
+          相关商品
+          相关商品相关商品相关商品相关商品相关商品
+          相关商品相关商品相关商品相关商品相关商品相关商品
+        </div>
+        <div id="info3" class="pro_infobox" style="display: none;">
+          商品评论商品评论商品评论商品评论商品评论商品评论商品评论商品评论商品评论商品评论商品评论商品评论商品评论商品评论商品评论商品评论商品评论商品评论商品评论商品评论商品评论
+        </div>
+        <div id="info4" class="pro_infobox" style="display: none;">
+          付款方式付款方式付款方式付款方式付款方式付款方式付款方式付款方式付款方式付款方式付款方式付款方式付款方式付款方式付款方式付款方式付款方式付款方式付款方式付款方式付款方式付款方式付款方式付款方式付款方式
+        </div>
+        <div id="info5" class="pro_infobox" style="display: none;">
+          送货方式送货方式送货方式送货方式送货方式送货方式送货方式送货方式送货方式送货方式送货方式送货方式送货方式送货方式送货方式送货方式送货方式送货方式送货方式
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--底部-->
+  <div id="pagefooter">
+    <!--底部导航-->
+    <div id="footnav">
+      <ul>
+        <li class="listnav">
+          <h4>关于我们</h4>
+          <ul>
+            <li><a href="#">发展历程</a></li>
+            <li><a href="#">联系方式</a></li>
+            <li><a href="#">公司介绍</a></li>
+            <li><a href="#">企业文化</a></li>
+          </ul>
+        </li>
+        <li class="listnav">
+          <h4>付款方式</h4>
+          <ul>
+            <li><a href="#">银行汇款</a></li>
+            <li><a href="#">在线支付</a></li>
+            <li><a href="#">银行汇款</a></li>
+            <li><a href="#">公司转账</a></li>
+          </ul>
+        </li>
+        <li class="listnav">
+          <h4>送货方式</h4>
+          <ul>
+            <li><a href="#">上门自提</a></li>
+            <li><a href="#">EMS快递</a></li>
+            <li><a href="#">快递发货</a></li>
+            <li><a href="#">平邮发货</a></li>
+          </ul>
+        </li>
+        <li class="listnav">
+          <h4>售后服务</h4>
+          <ul>
+            <li><a href="#">质保承诺</a></li>
+            <li><a href="#">退换货政策</a></li>
+            <li><a href="#">价格保护</a></li>
+            <li><a href="#">返修申请</a></li>
+          </ul>
+        </li>
+        <li class="listnav">
+          <h4>购物帮助</h4>
+          <ul>
+            <li><a href="#">用户等级</a></li>
+            <li><a href="#">积分获得与使用</a></li>
+            <li><a href="#">购物流程</a></li>
+            <li><a href="#">常见流程</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+  <div id="footinfo">
+    <div><span>淘宝店</span><span>易趣店</span><span>京东店</span><span>天猫店</span></div>
+    <div><span>CopyRight2019.6版权所有:yokemadman.shopcar</span></div>
+    <div><span>客服热线:028-666454545,售后服务:028-666445470</span></div>
+    <div><span>客服邮箱:1763242294@qq.com,技术支持:1763242294@qq.com</span></div>
+  </div>
+</div>
+
+
+</body>
+</html>
